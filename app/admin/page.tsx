@@ -15,6 +15,8 @@ type Lead = {
 export default function AdminPage() {
   const [leads, setLeads] = useState<Lead[]>([]);
   const [busca, setBusca] = useState("");
+  const [senha, setSenha] = useState("");
+  const [autorizado, setAutorizado] = useState(false);
 
   const carregarLeads = async () => {
     const { data, error } = await supabase
@@ -31,10 +33,21 @@ export default function AdminPage() {
   };
 
   useEffect(() => {
-    carregarLeads();
-  }, []);
-  const leadsFiltrados = leads.filter((lead) => {
+  carregarLeads();
+}, []);
+
+const verificarSenha = () => {
+  if (senha === "leadify123") {
+    setAutorizado(true);
+    return;
+  }
+
+  alert("Senha incorreta");
+};
+
+const leadsFiltrados = leads.filter((lead) => {
   const termo = busca.toLowerCase();
+
 
   return (
     lead.nome?.toLowerCase().includes(termo) ||
@@ -44,6 +57,32 @@ export default function AdminPage() {
   );
 });
 
+if (!autorizado) {
+  return (
+    <main className="flex min-h-screen items-center justify-center bg-black px-6">
+      <div className="w-full max-w-md rounded-2xl border border-zinc-800 bg-zinc-950 p-8">
+        <h1 className="mb-6 text-center text-3xl font-black text-white">
+          Área Administrativa
+        </h1>
+
+        <input
+          type="password"
+          placeholder="Digite a senha"
+          value={senha}
+          onChange={(e) => setSenha(e.target.value)}
+          className="mb-4 w-full rounded-xl border border-zinc-800 bg-black p-4 text-white outline-none"
+        />
+
+        <button
+          onClick={verificarSenha}
+          className="w-full rounded-xl bg-green-500 p-4 font-bold text-black"
+        >
+          Entrar
+        </button>
+      </div>
+    </main>
+  );
+}
   return (
     <main className="min-h-screen bg-black px-6 py-10 text-white">
       <section className="mx-auto max-w-7xl">
