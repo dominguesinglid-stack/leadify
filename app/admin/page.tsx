@@ -37,7 +37,7 @@ export default function AdminPage() {
 }, []);
 
 const verificarSenha = () => {
-  if (senha === "leadify123") {
+  if (senha === process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
     setAutorizado(true);
     return;
   }
@@ -147,7 +147,9 @@ if (!autorizado) {
                 </div>
 
                 <a
-                  href={`https://wa.me/55${lead.whatsapp}`}
+                  href={`https://wa.me/55${lead.whatsapp}?text=${encodeURIComponent(
+  `Olá ${lead.nome}! Vi seu cadastro na Leadify e gostaria de entender melhor sua necessidade.`
+)}`}
                   target="_blank"
                   className="rounded-xl bg-green-500 px-5 py-3 text-center font-bold text-black transition hover:bg-green-400"
                 >
