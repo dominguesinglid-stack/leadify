@@ -33,30 +33,44 @@ export default function Home() {
     carregarLeads();
   }, []);
 
-  const salvarLead = async () => {
-    const { error } = await supabase.from("leads").insert([
-      { nome, email, whatsapp, empresa },
-    ]);
+const salvarLead = async () => {
+  const { error } = await supabase.from("leads").insert([
+    { nome, email, whatsapp, empresa },
+  ]);
 
-    if (error) {
-      alert("Erro ao salvar lead");
-      console.error(error);
-      return;
-    }
+  if (error) {
+    alert("Erro ao salvar lead");
+    console.error(error);
+    return;
+  }
 
-    setSucesso(true);
-    await carregarLeads();
+  await fetch("/api/telegram", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      nome,
+      email,
+      whatsapp,
+      empresa,
+    }),
+  });
 
-    setTimeout(() => {
-      setSucesso(false);
-    }, 3000);
+  setSucesso(true);
+  await carregarLeads();
 
-    setModalAberto(false);
-    setNome("");
-    setEmail("");
-    setWhatsapp("");
-    setEmpresa("");
-  };
+  setTimeout(() => {
+    setSucesso(false);
+  }, 3000);
+
+  setModalAberto(false);
+
+  setNome("");
+  setEmail("");
+  setWhatsapp("");
+  setEmpresa("");
+};
 
   return (
     <main className={`${inter.className} min-h-screen bg-black text-white`}>
