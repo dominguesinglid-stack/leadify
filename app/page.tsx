@@ -3,6 +3,16 @@
 import { useEffect, useState } from "react";
 import { Anton, Inter } from "next/font/google";
 import { supabase } from "@/lib/supabase";
+import {
+  MessageCircle,
+  Bot,
+  Zap,
+  TrendingUp,
+  Dumbbell,
+  Building2,
+  Scale,
+  Wrench,
+} from "lucide-react";
 
 const anton = Anton({ weight: "400", subsets: ["latin"] });
 const inter = Inter({ subsets: ["latin"] });
@@ -131,7 +141,7 @@ const salvarLead = async () => {
         </div>
       </section>
 
-      <section id="como-funciona" className="mx-auto max-w-7xl px-6 py-16">
+      <section id="como-funciona" className="mx-auto max-w-7xl px-6 pt-10 pb-2 md:py-16">
         <div className="text-center">
           <h2 className={`${anton.className} text-5xl uppercase md:text-7xl`}>
             Como a Leadify funciona
@@ -157,7 +167,7 @@ const salvarLead = async () => {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16">
+      <section className="mx-auto max-w-7xl px-6 pt-10 pb-2 md:py-16">
   <div className="text-center">
     <span className="rounded-full border border-green-500 px-4 py-2 text-sm font-bold text-green-400">
       SEGMENTOS
@@ -174,31 +184,36 @@ const salvarLead = async () => {
 
   <div className="mt-10 grid gap-6 md:grid-cols-4">
     {[
-      [
-        "💄",
-        "Estética",
-        "Mais avaliações, orçamentos e agendamentos pelo WhatsApp.",
-      ],
-      [
-        "🏠",
-        "Imobiliárias",
-        "Mais visitas e oportunidades para seus imóveis.",
-      ],
-      [
-        "⚖️",
-        "Advocacia",
-        "Mais consultas organizadas em um único painel.",
-      ],
-      [
-        "🔧",
-        "Oficinas",
-        "Mais pedidos de orçamento direto pelo WhatsApp.",
-      ],
-    ].map(([icon, title, text]) => (
-      <div
-        key={title}
-        className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 transition hover:border-green-500"
-      >
+  [
+    "🏋️",
+    "Personal Trainer",
+    "Mais alunos, avaliações físicas e consultorias pelo WhatsApp.",
+    "/segmentos/personal-trainer",
+  ],
+  [
+    "🏠",
+    "Imobiliárias",
+    "Mais visitas e oportunidades para seus imóveis.",
+    "#",
+  ],
+  [
+    "⚖️",
+    "Advocacia",
+    "Mais consultas organizadas em um único painel.",
+    "#",
+  ],
+  [
+    "🔧",
+    "Oficinas",
+    "Mais pedidos de orçamento direto pelo WhatsApp.",
+    "#",
+  ],
+].map(([icon, title, text, link]) => (
+      <a
+  href={link}
+  key={title}
+  className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 transition hover:border-green-500 hover:bg-zinc-900"
+>
         <div className="text-4xl">{icon}</div>
 
         <h3 className={`${anton.className} mt-5 text-3xl uppercase`}>
@@ -210,12 +225,12 @@ const salvarLead = async () => {
         <p className="mt-5 font-bold text-green-400">
           Em breve →
         </p>
-      </div>
-    ))}
+      </a>
+))}
   </div>
 </section>
 
-      <section id="demo" className="mx-auto max-w-7xl px-6 py-16">
+      <section id="demo" className="mx-auto max-w-7xl px-6 pt-10 pb-2 md:py-16">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
             <span className="rounded-full border border-green-500 px-4 py-2 text-sm font-bold text-green-400">
@@ -274,7 +289,7 @@ const salvarLead = async () => {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16">
+      <section className="mx-auto max-w-7xl px-6 py-10 md:py-16">
         <div className="text-center">
           <span className="rounded-full border border-green-500 px-4 py-2 text-sm font-bold text-green-400">
             DASHBOARD
@@ -332,7 +347,7 @@ const salvarLead = async () => {
         </div>
       </section>
 
-      <section id="beneficios" className="mx-auto max-w-7xl px-6 py-16">
+      <section id="beneficios" className="mx-auto max-w-7xl px-6 py-10 md:py-16">
         <div className="grid gap-6 md:grid-cols-4">
           {[
             ["12K+", "Mensagens Respondidas"],
