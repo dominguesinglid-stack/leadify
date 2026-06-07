@@ -157,6 +157,64 @@ const salvarLead = async () => {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-6 py-16">
+  <div className="text-center">
+    <span className="rounded-full border border-green-500 px-4 py-2 text-sm font-bold text-green-400">
+      SEGMENTOS
+    </span>
+
+    <h2 className={`${anton.className} mt-6 text-5xl uppercase md:text-7xl`}>
+      Para quem é a Leadify?
+    </h2>
+
+    <p className="mx-auto mt-4 max-w-2xl text-xl text-zinc-300">
+      Uma plataforma para captar, organizar e converter leads em diferentes tipos de negócio.
+    </p>
+  </div>
+
+  <div className="mt-10 grid gap-6 md:grid-cols-4">
+    {[
+      [
+        "💄",
+        "Estética",
+        "Mais avaliações, orçamentos e agendamentos pelo WhatsApp.",
+      ],
+      [
+        "🏠",
+        "Imobiliárias",
+        "Mais visitas e oportunidades para seus imóveis.",
+      ],
+      [
+        "⚖️",
+        "Advocacia",
+        "Mais consultas organizadas em um único painel.",
+      ],
+      [
+        "🔧",
+        "Oficinas",
+        "Mais pedidos de orçamento direto pelo WhatsApp.",
+      ],
+    ].map(([icon, title, text]) => (
+      <div
+        key={title}
+        className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 transition hover:border-green-500"
+      >
+        <div className="text-4xl">{icon}</div>
+
+        <h3 className={`${anton.className} mt-5 text-3xl uppercase`}>
+          {title}
+        </h3>
+
+        <p className="mt-3 text-sm text-zinc-400">{text}</p>
+
+        <p className="mt-5 font-bold text-green-400">
+          Em breve →
+        </p>
+      </div>
+    ))}
+  </div>
+</section>
+
       <section id="demo" className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
