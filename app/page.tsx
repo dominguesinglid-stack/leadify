@@ -280,9 +280,22 @@ const salvarLead = async () => {
               Prazer, Carlos! A Leadify pode automatizar seu atendimento e organizar seus leads automaticamente.
               </div>
 
-              <div className="rounded-2xl border border-green-500/40 bg-green-500/10 p-4 text-sm font-bold text-green-400">
-                ✅ Lead salvo automaticamente no CRM
-              </div>
+              <div className="rounded-2xl border border-green-500/40 bg-green-500/10 p-4">
+  <p className="font-bold text-green-400">
+    🎯 Lead qualificado
+  </p>
+
+  <div className="mt-3 text-sm text-zinc-300">
+    <p><strong>Nome:</strong> Carlos</p>
+    <p><strong>Necessidade:</strong> Mais clientes</p>
+    <p>
+  <strong>Status:</strong>{" "}
+  <span className="text-green-400 font-bold">
+    🟢 Qualificado
+  </span>
+</p>
+  </div>
+</div>
             </div>
           </div>
         </div>
