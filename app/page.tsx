@@ -153,13 +153,13 @@ const salvarLead = async () => {
 
         <div className="mt-10 grid gap-6 md:grid-cols-4">
           {[
-            ["📲", "Conecte o WhatsApp", "Integre seu atendimento e prepare o canal para receber clientes."],
-            ["🤖", "Configure a IA", "Defina o comportamento, tom de voz e informações da empresa."],
-            ["⚡", "Automatize respostas", "A IA responde, qualifica e conduz a conversa automaticamente."],
-            ["📈", "Gere mais clientes", "Organize leads e aproveite melhor cada oportunidade de venda."],
-          ].map(([icon, title, text]) => (
+  [<MessageCircle size={32} />, "Conecte o WhatsApp", "Integre seu atendimento e prepare o canal para receber clientes."],
+  [<Bot size={32} />, "Configure a IA", "Defina o comportamento, tom de voz e informações da empresa."],
+  [<Zap size={32} />, "Automatize respostas", "A IA responde, qualifica e conduz a conversa automaticamente."],
+  [<TrendingUp size={32} />, "Gere mais clientes", "Organize leads e aproveite melhor cada oportunidade de venda."],
+].map(([icon, title, text]) => (
             <div key={title} className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 transition hover:border-green-500">
-              <div className="text-3xl">{icon}</div>
+              <div className="text-green-400">{icon}</div>
               <h3 className={`${anton.className} mt-5 text-2xl uppercase`}>{title}</h3>
               <p className="mt-3 text-sm text-zinc-400">{text}</p>
             </div>
@@ -184,37 +184,37 @@ const salvarLead = async () => {
 
   <div className="mt-10 grid gap-6 md:grid-cols-4">
     {[
-  [
-    "🏋️",
-    "Personal Trainer",
-    "Mais alunos, avaliações físicas e consultorias pelo WhatsApp.",
-    "/segmentos/personal-trainer",
-  ],
-  [
-    "🏠",
-    "Imobiliárias",
-    "Mais visitas e oportunidades para seus imóveis.",
-    "#",
-  ],
-  [
-    "⚖️",
-    "Advocacia",
-    "Mais consultas organizadas em um único painel.",
-    "#",
-  ],
-  [
-    "🔧",
-    "Oficinas",
-    "Mais pedidos de orçamento direto pelo WhatsApp.",
-    "#",
-  ],
-].map(([icon, title, text, link]) => (
+      [
+        <Dumbbell size={36} />,
+        "Personal Trainer",
+        "Mais alunos, avaliações físicas e consultorias pelo WhatsApp.",
+        "/segmentos/personal-trainer",
+      ],
+      [
+        <Building2 size={36} />,
+        "Imobiliárias",
+        "Mais visitas e oportunidades para seus imóveis.",
+        "#",
+      ],
+      [
+        <Scale size={36} />,
+        "Advocacia",
+        "Mais consultas organizadas em um único painel.",
+        "#",
+      ],
+      [
+        <Wrench size={36} />,
+        "Oficinas",
+        "Mais pedidos de orçamento direto pelo WhatsApp.",
+        "#",
+      ],
+    ].map(([icon, title, text, link]) => (
       <a
-  href={link}
-  key={title}
-  className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 transition hover:border-green-500 hover:bg-zinc-900"
->
-        <div className="text-4xl">{icon}</div>
+        href={link}
+        key={title}
+        className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 transition hover:border-green-500 hover:bg-zinc-900"
+      >
+        <div className="text-green-400">{icon}</div>
 
         <h3 className={`${anton.className} mt-5 text-3xl uppercase`}>
           {title}
@@ -223,10 +223,10 @@ const salvarLead = async () => {
         <p className="mt-3 text-sm text-zinc-400">{text}</p>
 
         <p className="mt-5 font-bold text-green-400">
-          Em breve →
+          Ver solução →
         </p>
       </a>
-))}
+    ))}
   </div>
 </section>
 
@@ -256,7 +256,7 @@ const salvarLead = async () => {
 
           <div className="rounded-3xl border border-zinc-800 bg-zinc-950 p-6 shadow-2xl shadow-green-500/10">
             <div className="mb-5 flex items-center gap-3 border-b border-zinc-800 pb-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500 text-black">🤖</div>
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500 text-black"><Bot size={30} /></div>
               <div>
                 <p className="font-bold">Leadify IA</p>
                 <p className="text-sm text-green-400">online agora</p>
@@ -273,12 +273,11 @@ const salvarLead = async () => {
               </div>
 
               <div className="max-w-[80%] rounded-2xl bg-zinc-800 p-4 text-sm text-zinc-200">
-                Meu nome é Guilherme. Tenho uma loja de roupas.
+               Meu nome é Carlos. Tenho uma empresa e gostaria de atrair mais clientes.
               </div>
 
               <div className="ml-auto max-w-[90%] rounded-2xl bg-green-500 p-4 text-sm font-bold text-black">
-                Prazer, Guilherme! A Leadify pode automatizar o atendimento da
-                sua loja e organizar seus leads automaticamente.
+              Prazer, Carlos! A Leadify pode automatizar seu atendimento e organizar seus leads automaticamente.
               </div>
 
               <div className="rounded-2xl border border-green-500/40 bg-green-500/10 p-4 text-sm font-bold text-green-400">
