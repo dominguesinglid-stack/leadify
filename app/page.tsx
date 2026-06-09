@@ -157,9 +157,9 @@ const salvarLead = async () => {
   [<Bot size={32} />, "Configure a IA", "Defina o comportamento, tom de voz e informações da empresa."],
   [<Zap size={32} />, "Automatize respostas", "A IA responde, qualifica e conduz a conversa automaticamente."],
   [<TrendingUp size={32} />, "Gere mais clientes", "Organize leads e aproveite melhor cada oportunidade de venda."],
-].map(([icon, title, text]) => (
-            <div key={title} className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 transition hover:border-green-500">
-              <div className="text-green-400">{icon}</div>
+
+].map(([icon, title, text], index) => (
+              <div key={index} className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 transition hover:border-green-500">              <div className="text-green-400">{icon}</div>
               <h3 className={`${anton.className} mt-5 text-2xl uppercase`}>{title}</h3>
               <p className="mt-3 text-sm text-zinc-400">{text}</p>
             </div>
@@ -208,10 +208,11 @@ const salvarLead = async () => {
         "Mais pedidos de orçamento direto pelo WhatsApp.",
         "#",
       ],
-    ].map(([icon, title, text, link]) => (
+    
+    ].map(([icon, title, text, link], index) => (
       <a
-        href={link}
-        key={title}
+        href={String(link)}
+        key={index}
         className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 transition hover:border-green-500 hover:bg-zinc-900"
       >
         <div className="text-green-400">{icon}</div>
