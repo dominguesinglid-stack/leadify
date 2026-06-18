@@ -3,12 +3,16 @@ export async function POST(req: Request) {
     const body = await req.json();
 
     const mensagem = `
-🚀 Novo Lead Leadify
+🚀 NOVO LEAD LEADIFY
 
 👤 Nome: ${body.nome}
-🏢 Empresa: ${body.empresa}
+🎯 Segmento: ${body.empresa}
 📧 E-mail: ${body.email}
 📱 WhatsApp: ${body.whatsapp}
+
+📅 ${new Date().toLocaleString("pt-BR")}
+
+🟢 Lead aguardando contato
 `;
 
     const resposta = await fetch(

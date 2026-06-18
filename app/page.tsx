@@ -44,6 +44,25 @@ export default function Home() {
   }, []);
 
 const salvarLead = async () => {
+  if (!nome) {
+  alert("Informe seu nome.");
+  return;
+}
+
+if (!email) {
+  alert("Informe seu e-mail.");
+  return;
+}
+
+if (!whatsapp) {
+  alert("Informe seu WhatsApp.");
+  return;
+}
+
+if (!empresa) {
+  alert("Informe seu segmento de atuação.");
+  return;
+}
   const { error } = await supabase.from("leads").insert([
     { nome, email, whatsapp, empresa },
   ]);
@@ -72,7 +91,7 @@ const salvarLead = async () => {
 
   setTimeout(() => {
     setSucesso(false);
-  }, 3000);
+  }, 15000);
 
   setModalAberto(false);
 
@@ -425,27 +444,31 @@ const salvarLead = async () => {
       {modalAberto && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6">
           <div className="w-full max-w-lg rounded-3xl border border-zinc-800 bg-zinc-950 p-8">
-            <div className="mb-6 flex items-center justify-between">
-              <h2 className={`${anton.className} text-3xl uppercase`}>
-                Solicitar Demonstração
-              </h2>
+            <div className="mb-6 relative">
+  <h2 className={`${anton.className} text-center text-3xl uppercase`}>
+    Solicitar Demonstração
+  </h2>
 
-              <button
-                onClick={() => setModalAberto(false)}
-                className="text-2xl text-zinc-400 hover:text-white"
-              >
-                ✕
-              </button>
-            </div>
+  <p className="mt-3 text-center text-zinc-400">
+    Preencha os dados abaixo e veja como a Leadify pode automatizar seu atendimento.
+  </p>
+
+  <button
+    onClick={() => setModalAberto(false)}
+    className="absolute right-0 top-0 text-2xl text-zinc-400 hover:text-white"
+  >
+    ×
+  </button>
+</div>
 
             <div className="grid gap-4">
               <input className="rounded-xl border border-zinc-800 bg-black p-4 text-white" placeholder="Seu nome" value={nome} onChange={(e) => setNome(e.target.value)} />
               <input className="rounded-xl border border-zinc-800 bg-black p-4 text-white" placeholder="Seu e-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
-              <input className="rounded-xl border border-zinc-800 bg-black p-4 text-white" placeholder="WhatsApp" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} />
-              <input className="rounded-xl border border-zinc-800 bg-black p-4 text-white" placeholder="Empresa" value={empresa} onChange={(e) => setEmpresa(e.target.value)} />
+              <input className="rounded-xl border border-zinc-800 bg-black p-4 text-white" placeholder="(11) 99999-9999" value={whatsapp} onChange={(e) => { let valor = e.target.value.replace(/\D/g, ""); valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2"); valor = valor.replace(/(\d{5})(\d)/, "$1-$2"); setWhatsapp(valor); }}/>
+              <input className="rounded-xl border border-zinc-800 bg-black p-4 text-white" placeholder="Qual é o seu segmento de atuação?" value={empresa} onChange={(e) => setEmpresa(e.target.value)} />
 
               <button onClick={salvarLead} className="mt-3 rounded-xl bg-green-500 py-4 font-bold text-black transition hover:bg-green-400">
-                QUERO AUTOMATIZAR MEU WHATSAPP
+                💬 SOLICITAR DEMONSTRAÇÃO GRATUITA
               </button>
             </div>
           </div>
@@ -453,12 +476,27 @@ const salvarLead = async () => {
       )}
 
       {sucesso && (
-        <div className="fixed bottom-6 right-6 z-50 rounded-2xl border border-green-500 bg-zinc-950 px-6 py-4 shadow-lg">
-          <p className="font-bold text-green-400">
-            ✅ Lead cadastrado com sucesso!
-          </p>
-        </div>
-      )}
+  <div className="fixed bottom-6 right-6 z-50 max-w-md rounded-2xl border border-green-500 bg-zinc-950 p-6 shadow-lg shadow-green-500/20">
+    <h3 className="text-lg font-extrabold text-green-400">
+      🎉 Demonstração iniciada!
+    </h3>
+
+    <p className="mt-3 text-sm text-zinc-300">
+  🤖 A Leadify analisou e qualificou este lead automaticamente.
+    </p>
+
+    <div className="mt-4 space-y-2 text-sm">
+  <p className="text-green-400">🔍 Segmento identificado</p>
+  <p className="text-green-400">🎯 Interesse detectado</p>
+  <p className="text-green-400">✅ Lead qualificado</p>
+  <p className="text-green-400">📥 Registrado no CRM</p>
+    </div>
+
+    <p className="mt-4 text-xs text-zinc-400">
+  Recomendação: Automação de WhatsApp + acompanhamento de leads.
+</p>
+  </div>
+)}
     </main>
   );
 }
