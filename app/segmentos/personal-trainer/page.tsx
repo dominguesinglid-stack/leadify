@@ -1,5 +1,14 @@
 import Link from "next/link";
 import { Anton, Inter } from "next/font/google";
+import {
+  Target,
+  Bell,
+  LayoutDashboard,
+  MessageCircle,
+  TrendingUp,
+  UserPlus,
+  Zap,
+} from "lucide-react";
 
 const anton = Anton({
   weight: "400",
@@ -70,16 +79,18 @@ export default function PersonalTrainerPage() {
 
         <div className="mt-10 grid gap-6 md:grid-cols-4">
           {[
-            ["📲", "Lead entra", "A pessoa interessada preenche o formulário."],
-            ["⚡", "Você recebe alerta", "A notificação chega instantaneamente no Telegram."],
-            ["📋", "Contato organizado", "O lead fica salvo no painel da Leadify."],
-            ["💬", "WhatsApp pronto", "Você abre a conversa com mensagem automática."],
-          ].map(([icon, title, text]) => (
+  { Icon: UserPlus, title: "Lead entra", text: "A pessoa interessada preenche o formulário." },
+  { Icon: Zap, title: "Você recebe alerta", text: "A notificação chega instantaneamente no Telegram." },
+  { Icon: LayoutDashboard, title: "Contato organizado", text: "O lead fica salvo no painel da Leadify." },
+  { Icon: MessageCircle, title: "WhatsApp pronto", text: "Você abre a conversa com mensagem automática." },
+].map(({ Icon, title, text }) => (
             <div
               key={title}
               className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 transition hover:border-green-500"
             >
-              <div className="text-4xl">{icon}</div>
+              <div className="text-green-400">
+              <Icon size={32} strokeWidth={2.5} />
+              </div>
               <h3 className={`${anton.className} mt-5 text-3xl uppercase`}>
                 {title}
               </h3>
@@ -107,21 +118,24 @@ export default function PersonalTrainerPage() {
           </div>
 
           <div className="grid gap-4">
-            {[
-              "🏋️ Captura interessados em treinos",
-              "📲 Envia alerta instantâneo",
-              "📋 Organiza contatos no painel",
-              "💬 Abre WhatsApp com mensagem pronta",
-              "📈 Ajuda a aumentar agendamentos",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-zinc-800 bg-zinc-950 p-5 font-bold text-zinc-200"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
+  {[
+    [Target, "Captura interessados em treinos"],
+    [Bell, "Envia alerta instantâneo"],
+    [LayoutDashboard, "Organiza contatos no painel"],
+    [MessageCircle, "Abre WhatsApp com mensagem pronta"],
+    [TrendingUp, "Ajuda a aumentar agendamentos"],
+  ].map(([Icon, item]) => (
+    <div
+      key={item}
+      className="rounded-2xl border border-zinc-800 bg-zinc-950 p-5 font-bold text-zinc-200"
+    >
+      <div className="flex items-center gap-4">
+        <Icon size={24} className="text-green-400" />
+        <span>{item}</span>
+      </div>
+    </div>
+  ))}
+</div>
         </div>
       </section>
 
