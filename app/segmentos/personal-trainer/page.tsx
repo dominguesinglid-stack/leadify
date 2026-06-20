@@ -51,9 +51,9 @@ export default function PersonalTrainerPage() {
 
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
           <a
-            href="#demo"
+            href="/?demo=personal"
             className="rounded-xl bg-green-500 px-8 py-4 font-extrabold text-black transition hover:bg-green-400"
-          >
+            >
             QUERO MAIS ALUNOS
           </a>
 

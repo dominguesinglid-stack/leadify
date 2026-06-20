@@ -25,6 +25,15 @@ export default function Home() {
   const [modalAberto, setModalAberto] = useState(false);
   const [sucesso, setSucesso] = useState(false);
   const [totalLeads, setTotalLeads] = useState(0);
+  useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+  const demo = params.get("demo");
+
+  if (demo) {
+    setEmpresa("Personal Trainer");
+    setModalAberto(true);
+  }
+}, []);
 
   const carregarLeads = async () => {
   const { data, error } = await supabase
