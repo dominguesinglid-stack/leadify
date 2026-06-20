@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Anton, Inter } from "next/font/google";
 import {
@@ -37,36 +38,51 @@ export default function PersonalTrainerPage() {
         </Link>
       </header>
 
-      <section className="mx-auto flex min-h-[85vh] max-w-7xl flex-col items-center justify-center px-6 text-center">
-        <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-green-500 px-4 py-2 text-sm font-bold text-green-400">
+    <section className="mx-auto min-h-[85vh] max-w-7xl px-6 pt-8 pb-16">
+    <div className="grid gap-12 lg:grid-cols-2">
+    <div className="pt-8 text-center lg:text-left">
+      <div className="mb-8 inline-flex items-center gap-3 rounded-full border-2 border-green-500 bg-green-500/10 px-6 py-3 text-base font-extrabold text-green-400">
         <Award size={18} strokeWidth={2.5} />
         <span>JULIANA PERSONAL TRAINER</span>
-        </div>
+      </div>
 
-        <h1 className={`${anton.className} max-w-6xl text-6xl uppercase leading-[0.9] tracking-wide md:text-8xl`}>
-          TRANSFORME SEU CORPO COM ACOMPANHAMENTO REAL
-        </h1>
+      <h1 className={`${anton.className} max-w-4xl text-6xl uppercase leading-[0.9] tracking-wide md:text-7xl`}>
+        TRANSFORME SEU CORPO COM ACOMPANHAMENTO REAL
+      </h1>
 
-        <p className="mt-8 max-w-3xl text-2xl font-semibold text-zinc-200">
-          Treinos personalizados para mulheres que buscam emagrecimento, definição muscular e mais qualidade de vida.
-        </p>
+      <p className="mt-8 max-w-3xl text-2xl font-semibold text-zinc-200">
+        Treinos personalizados para mulheres que buscam emagrecimento,
+        definição muscular e mais qualidade de vida.
+      </p>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-          <a
-            href="/?demo=personal"
-            className="rounded-xl bg-green-500 px-8 py-4 font-extrabold text-black transition hover:bg-green-400"
-            >
-            QUERO MAIS ALUNOS
-          </a>
+      <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+        <Link
+          href="/?demo=personal"
+          className="rounded-xl bg-green-500 px-8 py-4 font-extrabold text-black transition hover:bg-green-400"
+        >
+          QUERO MAIS ALUNOS
+        </Link>
 
-          <a
-            href="#como-funciona"
-            className="rounded-xl border border-zinc-700 px-8 py-4 font-extrabold transition hover:border-green-500"
-          >
-            VER COMO FUNCIONA
-          </a>
-        </div>
-      </section>
+        <Link
+          href="#como-funciona"
+          className="rounded-xl border border-zinc-700 px-8 py-4 font-extrabold transition hover:border-green-500"
+        >
+          VER COMO FUNCIONA
+        </Link>
+      </div>
+    </div>
+
+    <div className="flex justify-center lg:justify-end">
+      <Image
+        src="/images/juliana-hero.jpg"
+        alt="Juliana Personal Trainer"
+        width={420}
+        height={760}
+        className="h-auto max-h-[760px] w-auto rounded-3xl object-contain shadow-2xl" priority
+      />
+    </div>
+  </div>
+</section>
 
       <section id="como-funciona" className="mx-auto max-w-7xl px-6 py-16">
         <div className="text-center">
