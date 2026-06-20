@@ -119,12 +119,12 @@ export default function PersonalTrainerPage() {
 
           <div className="grid gap-4">
   {[
-    [Target, "Captura interessados em treinos"],
-    [Bell, "Envia alerta instantâneo"],
-    [LayoutDashboard, "Organiza contatos no painel"],
-    [MessageCircle, "Abre WhatsApp com mensagem pronta"],
-    [TrendingUp, "Ajuda a aumentar agendamentos"],
-  ].map(([Icon, item]) => (
+  { Icon: Target, item: "Captura interessados em treinos" },
+  { Icon: Bell, item: "Envia alerta instantâneo" },
+  { Icon: LayoutDashboard, item: "Organiza contatos no painel" },
+  { Icon: MessageCircle, item: "Abre WhatsApp com mensagem pronta" },
+  { Icon: TrendingUp, item: "Ajuda a aumentar agendamentos" },
+].map(({ Icon, item }) => (
     <div
       key={item}
       className="rounded-2xl border border-zinc-800 bg-zinc-950 p-5 font-bold text-zinc-200"
