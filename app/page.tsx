@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Anton, Inter } from "next/font/google";
 import { supabase } from "@/lib/supabase";
@@ -113,9 +114,12 @@ if (!empresa) {
   return (
     <main className={`${inter.className} min-h-screen bg-black text-white`}>
       <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-        <div className={`${anton.className} text-4xl tracking-wide md:text-5xl`}>
-          LEADIFY<span className="text-green-500">.</span>
-        </div>
+        <Link
+  href="/"
+  className={`${anton.className} text-4xl tracking-wide md:text-5xl`}
+  >
+  LEADIFY<span className="text-green-500">.</span>
+  </Link>
 
         <nav className={`${anton.className} hidden gap-10 text-xl uppercase tracking-wide text-zinc-200 md:flex`}>
           <a href="#como-funciona" className="transition hover:text-green-400">Como funciona</a>
