@@ -70,9 +70,9 @@ export default function PersonalTrainerPage() {
       <Image
         src="/images/juliana-hero.jpg"
         alt="Juliana Personal Trainer"
-        width={420}
-        height={760}
-        className="h-auto max-h-[760px] w-auto rounded-3xl object-contain shadow-2xl" priority
+        width={360}
+        height={620}
+        className="h-auto max-h-[620px] w-auto rounded-3xl object-contain shadow-2xl lg:max-h-[760px]" priority
       />
     </div>
   </div>
