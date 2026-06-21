@@ -45,7 +45,7 @@ export default function PersonalTrainerPage() {
         TRANSFORME SEU CORPO COM ACOMPANHAMENTO REAL
       </h1>
 
-      <p className="mt-8 max-w-3xl text-[1.35rem] font-semibold text-zinc-200 md:text-2xl">
+      <p className="mt-8 max-w-3xl text-lg md:text-2xl font-semibold text-zinc-200 md:text-2xl">
         Treinamento personalizado para homens e mulheres que buscam mais força, condicionamento físico, performance e qualidade de vida.
       </p>
 
