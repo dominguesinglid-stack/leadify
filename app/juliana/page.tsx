@@ -27,7 +27,7 @@ export default function PersonalTrainerPage() {
     <main className={`${inter.className} min-h-screen bg-black text-white`}>
       <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
         <div className="flex flex-col">
-        <span className="text-5xl font-black tracking-wide text-white">
+        <span className="text-4xl md:text-5xl font-black tracking-wide text-white">
        Juliana Ottero
       </span>
 
