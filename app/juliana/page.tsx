@@ -31,7 +31,7 @@ export default function PersonalTrainerPage() {
        Juliana Ottero
       </span>
 
-      <span className="mt-1 text-sm uppercase tracking-[0.4em] text-green-500">
+      <span className="mt-1 text-xs uppercase tracking-[0.25em] text-green-500 md:text-sm md:tracking-[0.4em]">
       PERSONAL TRAINER • CONSULTORIA ONLINE E PRESENCIAL
       </span>
       </div>
