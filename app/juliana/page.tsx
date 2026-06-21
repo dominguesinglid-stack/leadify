@@ -41,11 +41,11 @@ export default function PersonalTrainerPage() {
     <div className="grid gap-12 lg:grid-cols-2">
     <div className="pt-8 text-center lg:text-left">
 
-      <h1 className={`${anton.className} max-w-full text-4xl uppercase leading-[0.9] tracking-wide sm:text-5xl md:max-w-4xl md:text-7xl`}>
+      <h1 className={`${anton.className} max-w-full text-[3rem] uppercase leading-[0.9] tracking-wide sm:text-5xl md:max-w-4xl md:text-7xl`}>
         TRANSFORME SEU CORPO COM ACOMPANHAMENTO REAL
       </h1>
 
-      <p className="mt-8 max-w-3xl text-xl font-semibold text-zinc-200 md:text-2xl">
+      <p className="mt-8 max-w-3xl text-[1.35rem] font-semibold text-zinc-200 md:text-2xl">
         Treinamento personalizado para homens e mulheres que buscam mais força, condicionamento físico, performance e qualidade de vida.
       </p>
 
