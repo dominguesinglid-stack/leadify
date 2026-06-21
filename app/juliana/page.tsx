@@ -89,7 +89,7 @@ export default function PersonalTrainerPage() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-4">
+        <div className="mt-6 grid gap-6 md:mt-10 md:grid-cols-4">
           {[
   { Icon: UserPlus, title: "Avaliação inicial", text: "Entenda seu objetivo, rotina e nível atual." },
   { Icon: Zap, title: "Plano personalizado", text: "Treinos ajustados para seu corpo e sua realidade." },
