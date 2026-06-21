@@ -66,7 +66,7 @@ export default function PersonalTrainerPage() {
       </div>
     </div>
 
-    <div className="mt-12 flex justify-center lg:mt-0 lg:justify-end">
+    <div className="mt-4 flex justify-center lg:mt-0 lg:justify-end">
       <Image
         src="/images/juliana-hero.jpg"
         alt="Juliana Personal Trainer"
@@ -78,7 +78,7 @@ export default function PersonalTrainerPage() {
   </div>
 </section>
 
-      <section id="metodo" className="mx-auto max-w-7xl px-6 pt-28 pb-16">
+      <section id="metodo" className="mx-auto max-w-7xl px-6 pt-10 pb-16">
         <div className="text-center">
           <h2 className={`${anton.className} text-5xl uppercase md:text-7xl`}>
             Como funciona o acompanhamento
