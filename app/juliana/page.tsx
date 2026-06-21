@@ -41,7 +41,7 @@ export default function PersonalTrainerPage() {
     <div className="grid gap-12 lg:grid-cols-2">
     <div className="pt-4 text-center lg:text-left">
 
-      <h1 className={`${anton.className} max-w-full text-[3rem] uppercase leading-[0.9] tracking-wide sm:text-5xl md:max-w-4xl md:text-7xl`}>
+      <h1 className={`${anton.className} max-w-full text-[2.8rem] uppercase leading-[0.9] tracking-wide sm:text-5xl md:max-w-4xl md:text-7xl`}>
         TRANSFORME SEU CORPO COM ACOMPANHAMENTO REAL
       </h1>
 
