@@ -66,7 +66,7 @@ export default function PersonalTrainerPage() {
       </div>
     </div>
 
-    <div className="flex justify-center lg:justify-end">
+    <div className="mt-12 flex justify-center lg:mt-0 lg:justify-end">
       <Image
         src="/images/juliana-hero.jpg"
         alt="Juliana Personal Trainer"
