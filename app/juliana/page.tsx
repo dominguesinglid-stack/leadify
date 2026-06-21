@@ -26,33 +26,27 @@ export default function PersonalTrainerPage() {
   return (
     <main className={`${inter.className} min-h-screen bg-black text-white`}>
       <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-        <Link href="/" className={`${anton.className} text-4xl tracking-wide`}>
-          LEADIFY<span className="text-green-500">.</span>
-        </Link>
+        <div className="flex flex-col">
+        <span className="text-5xl font-black tracking-wide text-white">
+       Juliana Ottero
+      </span>
 
-        <Link
-          href="/"
-          className="rounded-full border border-zinc-700 px-5 py-2 font-bold transition hover:border-green-500"
-        >
-          Voltar
-        </Link>
+      <span className="mt-1 text-sm uppercase tracking-[0.4em] text-green-500">
+      PERSONAL TRAINER • CONSULTORIA ONLINE E PRESENCIAL
+      </span>
+      </div>
       </header>
 
     <section className="mx-auto min-h-[85vh] max-w-7xl px-6 pt-8 pb-16">
     <div className="grid gap-12 lg:grid-cols-2">
     <div className="pt-8 text-center lg:text-left">
-      <div className="mb-8 inline-flex items-center gap-3 rounded-full border-2 border-green-500 bg-green-500/10 px-6 py-3 text-base font-extrabold text-green-400">
-        <Award size={18} strokeWidth={2.5} />
-        <span>JULIANA PERSONAL TRAINER</span>
-      </div>
 
       <h1 className={`${anton.className} max-w-4xl text-6xl uppercase leading-[0.9] tracking-wide md:text-7xl`}>
         TRANSFORME SEU CORPO COM ACOMPANHAMENTO REAL
       </h1>
 
       <p className="mt-8 max-w-3xl text-2xl font-semibold text-zinc-200">
-        Treinos personalizados para mulheres que buscam emagrecimento,
-        definição muscular e mais qualidade de vida.
+        Treinamento personalizado para homens e mulheres que buscam mais força, condicionamento físico, performance e qualidade de vida.
       </p>
 
       <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -60,14 +54,14 @@ export default function PersonalTrainerPage() {
           href="/?demo=personal"
           className="rounded-xl bg-green-500 px-8 py-4 font-extrabold text-black transition hover:bg-green-400"
         >
-          QUERO MAIS ALUNOS
+          AGENDAR AVALIAÇÃO
         </Link>
 
         <Link
-          href="#como-funciona"
+          href="#metodo"
           className="rounded-xl border border-zinc-700 px-8 py-4 font-extrabold transition hover:border-green-500"
         >
-          VER COMO FUNCIONA
+          COMO FUNCIONA
         </Link>
       </div>
     </div>
@@ -84,23 +78,23 @@ export default function PersonalTrainerPage() {
   </div>
 </section>
 
-      <section id="como-funciona" className="mx-auto max-w-7xl px-6 py-16">
+      <section id="metodo" className="mx-auto max-w-7xl px-6 py-16">
         <div className="text-center">
           <h2 className={`${anton.className} text-5xl uppercase md:text-7xl`}>
-            Como funciona
+            Como funciona o acompanhamento
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-xl text-zinc-300">
-            Um fluxo simples para transformar interessados em alunos.
+            Um processo simples para você treinar com orientação, constância e foco em resultado.
           </p>
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-4">
           {[
-  { Icon: UserPlus, title: "Lead entra", text: "A pessoa interessada preenche o formulário." },
-  { Icon: Zap, title: "Você recebe alerta", text: "A notificação chega instantaneamente no Telegram." },
-  { Icon: LayoutDashboard, title: "Contato organizado", text: "O lead fica salvo no painel da Leadify." },
-  { Icon: MessageCircle, title: "WhatsApp pronto", text: "Você abre a conversa com mensagem automática." },
+  { Icon: UserPlus, title: "Avaliação inicial", text: "Entenda seu objetivo, rotina e nível atual." },
+  { Icon: Zap, title: "Plano personalizado", text: "Treinos ajustados para seu corpo e sua realidade." },
+  { Icon: LayoutDashboard, title: "Acompanhamento", text: "Evolução acompanhada com ajustes quando necessário." },
+  { Icon: MessageCircle, title: "Suporte direto", text: "Contato facilitado para tirar dúvidas e manter o foco." },
 ].map(({ Icon, title, text }) => (
             <div
               key={title}
@@ -126,22 +120,21 @@ export default function PersonalTrainerPage() {
             </span>
 
             <h2 className={`${anton.className} mt-6 text-5xl uppercase md:text-7xl`}>
-              Mais alunos, menos conversa perdida
+              EVOLUA COM UM PLANO FEITO PARA VOCÊ
             </h2>
 
             <p className="mt-6 text-lg text-zinc-400">
-              Ideal para personal trainers que vendem consultoria online,
-              treino presencial, avaliação física ou acompanhamento individual.
+              Treinos personalizados para quem busca ganho de massa muscular, condicionamento físico, performance e mais qualidade de vida.
             </p>
           </div>
 
           <div className="grid gap-4">
   {[
-  { Icon: Target, item: "Captura interessados em treinos" },
-  { Icon: Bell, item: "Envia alerta instantâneo" },
-  { Icon: LayoutDashboard, item: "Organiza contatos no painel" },
-  { Icon: MessageCircle, item: "Abre WhatsApp com mensagem pronta" },
-  { Icon: TrendingUp, item: "Ajuda a aumentar agendamentos" },
+  { Icon: Target, item: "Avaliação personalizada" },
+  { Icon: Bell, item: "Plano de treino individual" },
+  { Icon: LayoutDashboard, item: "Acompanhamento contínuo" },
+  { Icon: MessageCircle, item: "Suporte direto pelo WhatsApp" },
+  { Icon: TrendingUp, item: "Evolução baseada em resultados" },
 ].map(({ Icon, item }) => (
     <div
       key={item}
@@ -159,18 +152,18 @@ export default function PersonalTrainerPage() {
 
       <section className="mx-auto max-w-5xl px-6 py-20 text-center">
         <h2 className={`${anton.className} text-5xl uppercase md:text-8xl`}>
-          Pronta para testar com seus primeiros leads?
+          PRONTO PARA COMEÇAR SUA TRANSFORMAÇÃO?
         </h2>
 
         <p className="mx-auto mt-8 max-w-2xl text-xl text-zinc-400">
-          Use a Leadify para captar interessados e responder mais rápido pelo WhatsApp.
+          Dê o primeiro passo para alcançar seus objetivos com orientação profissional e acompanhamento personalizado.
         </p>
 
         <Link
           href="/"
           className="mt-10 inline-block rounded-xl bg-green-500 px-10 py-5 font-bold text-black transition hover:bg-green-400"
         >
-          VOLTAR PARA A DEMONSTRAÇÃO
+          AGENDAR AVALIAÇÃO
         </Link>
       </section>
     </main>
