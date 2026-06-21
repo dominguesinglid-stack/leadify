@@ -70,15 +70,15 @@ export default function PersonalTrainerPage() {
       <Image
         src="/images/juliana-hero.jpg"
         alt="Juliana Personal Trainer"
-        width={360}
-        height={620}
-        className="h-auto max-h-[620px] w-auto rounded-3xl object-contain shadow-2xl lg:max-h-[760px]" priority
+        width={420}
+        height={760}
+        className="h-auto max-h-[760px] w-auto rounded-3xl object-contain shadow-2xl" priority
       />
     </div>
   </div>
 </section>
 
-      <section id="metodo" className="mx-auto max-w-7xl px-6 pt-4 pb-16">
+      <section id="metodo" className="mx-auto max-w-7xl px-6 pt-10 pb-16">
         <div className="text-center">
           <h2 className={`${anton.className} text-5xl uppercase md:text-7xl`}>
             Como funciona o acompanhamento
