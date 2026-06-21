@@ -78,7 +78,7 @@ export default function PersonalTrainerPage() {
   </div>
 </section>
 
-      <section id="metodo" className="mx-auto max-w-7xl px-6 pt-10 pb-16">
+      <section id="metodo" className="mx-auto max-w-7xl px-6 pt-4 pb-16">
         <div className="text-center">
           <h2 className={`${anton.className} text-5xl uppercase md:text-7xl`}>
             Como funciona o acompanhamento
