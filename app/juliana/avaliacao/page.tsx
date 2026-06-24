@@ -2,7 +2,9 @@
 
 import { useState } from "react"
 export default function AvaliacaoPage() {
-    const [phone, setPhone] = useState("")
+const [nome, setNome] = useState("")
+const [phone, setPhone] = useState("")
+const [objetivo, setObjetivo] = useState("")
 
 const formatPhone = (value: string) => {
   const numbers = value.replace(/\D/g, "").slice(0, 11)
@@ -17,6 +19,24 @@ const formatPhone = (value: string) => {
 
   return `(${numbers.slice(0, 2)}) ${numbers.slice(2, 7)}-${numbers.slice(7)}`
 }
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault()
+
+  await fetch("/api/telegram", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      nome,
+      email: "Não informado",
+      whatsapp: phone,
+      empresa: `Avaliação Juliana - ${objetivo}`,
+    }),
+  })
+
+  window.location.href = "/juliana/obrigado"
+}
   return (
     <main className="min-h-screen bg-black text-white p-6">
       <div className="mx-auto max-w-xl">
@@ -28,15 +48,15 @@ const formatPhone = (value: string) => {
           Preencha seus dados para receber uma análise inicial.
         </p>
 
-        <form
-          action="/juliana/obrigado"
-          className="space-y-4"
-        >
+        <form onSubmit={handleSubmit} className="space-y-4">
+          
           <input
             type="text"
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
             placeholder="Seu nome completo"
             className="w-full rounded-lg bg-zinc-900 border border-zinc-700 p-4"
-          />
+        />
 
           <input
             type="tel"
@@ -46,12 +66,16 @@ const formatPhone = (value: string) => {
             className="w-full rounded-lg bg-zinc-900 border border-zinc-700 p-4"
           />
 
-          <select className="w-full rounded-lg bg-zinc-900 border border-zinc-700 p-4">
-            <option>Qual seu objetivo?</option>
-            <option>Ganho de massa</option>
-            <option>Emagrecimento</option>
-            <option>Condicionamento físico</option>
-            <option>Qualidade de vida</option>
+          <select
+            value={objetivo}
+            onChange={(e) => setObjetivo(e.target.value)}
+            className="w-full rounded-lg bg-zinc-900 border border-zinc-700 p-4"
+          >
+          <option value="">Qual seu objetivo?</option>
+          <option value="Ganho de massa">Ganho de massa</option>
+          <option value="Emagrecimento">Emagrecimento</option>
+          <option value="Condicionamento físico">Condicionamento físico</option>
+          <option value="Qualidade de vida">Qualidade de vida</option>
           </select>
 
           <button
