@@ -1,3 +1,10 @@
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
+
 export const metadata = {
   title: "Juliana Ottero | Personal Trainer",
   description:
@@ -9,5 +16,9 @@ export default function JulianaLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <div className={montserrat.className}>
+      {children}
+    </div>
+  );
 }

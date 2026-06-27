@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function ObrigadoPage() {
   return (
-    <main className="min-h-screen bg-black text-white flex items-center justify-center px-6 py-16">
+    <main className="min-h-screen bg-black bg-[radial-gradient(circle_at_top,rgba(34,197,94,0.18),transparent_35%)] px-6 py-16 text-white flex items-center justify-center">
       <div className="w-full max-w-xl rounded-3xl border border-zinc-800 bg-zinc-950/80 p-8 text-center shadow-2xl">
         <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-green-500 text-3xl text-black">
           ✓
