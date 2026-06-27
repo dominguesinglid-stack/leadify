@@ -3,16 +3,15 @@ export async function POST(req: Request) {
     const body = await req.json();
 
     const mensagem = `
-🚀 NOVO LEAD LEADIFY
+💪 NOVA AVALIAÇÃO JULIANA
 
 👤 Nome: ${body.nome}
-🎯 Segmento: ${body.empresa}
-📧 E-mail: ${body.email}
 📱 WhatsApp: ${body.whatsapp}
+🎯 Objetivo: ${body.empresa?.replace("Avaliação Juliana - ", "")}
 
 📅 ${new Date().toLocaleString("pt-BR")}
 
-🟢 Lead aguardando contato
+🟢 Aguardando contato
 `;
 
     const resposta = await fetch(
